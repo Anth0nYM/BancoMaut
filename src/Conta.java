@@ -10,6 +10,9 @@ public Conta(int agencia, int numero, Cliente cliente) {
  this.cliente = cliente;
 }
 public void deposita(double valor){
+    if (valor < 0){
+        System.out.println("Não é permitido o deposito de valores negativos");
+    }
     this.saldo += valor;
     System.out.println("Valor depositado, saldo atual: " + saldo);
 }
