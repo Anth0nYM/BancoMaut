@@ -15,15 +15,30 @@ public void deposita(double valor){
     }
     this.saldo += valor;
     System.out.println("Valor depositado, saldo atual: " + saldo);
+    this.enviaNotificacao("deposita", valor);
 }
-public void saca(double valor){
+public boolean saca(double valor){
     if(valor <= saldo){
         saldo -= valor;
         System.out.println("Saque realizado, saldo atual: " + saldo);
+        this.enviaNotificacao("Saque", valor);        
+        return true;
     } else{
         System.out.println("Você não possuí saldo suficiente para sacar esse valor");
-    }
+    }   return false;
 }
+public void tranfere(double valor, Conta contaDestino) {
+    System.out.println("Transferindo valor entre contas...");
+    boolean saqueComSucesso = this.saca(valor);
+    if (saqueComSucesso){
+        contaDestino.deposita(valor);
+    }
+    this.enviaNotificacao("transferencia", valor);
+}
+private void enviaNotificacao(String operacao, double valor ){
+    new Notificacao().sendEmail(operacao, valor);
+}
+
 public int getAgencia() {
     return agencia;
 }
