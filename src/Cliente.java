@@ -1,14 +1,17 @@
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 public class Cliente {
     private String nome;
     private String CPF;
     private LocalDate dataDeNascimento;
-    private Endereco endereco;
+    private List<Endereco> enderecos = new ArrayList<>();
+    
     public Cliente(String nome, String CPF, LocalDate dataDeNascimento, Endereco endereco){
         this.nome = nome;
         this.CPF = CPF;
         this.dataDeNascimento = dataDeNascimento;
-        this.endereco = endereco;
+        this.enderecos.add(endereco);
         }
 
     public String getNome() {
@@ -32,13 +35,15 @@ public class Cliente {
     }
 
 
-    public Endereco getEndereco() {
-        return endereco;
+    public List<Endereco> getEnderecos() {
+        return enderecos;
     }
 
 
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
+    public void addEndereco(Endereco endereco) {
+        this.enderecos.add(endereco);
     }
-    
+    public void removeEndereco(Endereco endereco) {
+        this.enderecos.remove(endereco);
+    }
 }
