@@ -1,13 +1,11 @@
-import java.util.Date;
-//import java.util.Scanner;
+import java.time.LocalDate;
 public class Cliente {
     private String nome;
     private String CPF;
-    private Date dataDeNascimento;
+    private LocalDate dataDeNascimento;
     private String endereco;
-    private Conta contas;
 
-    public Cliente(String nome, String CPF, Date dataDeNascimento, String endereco){
+    public Cliente(String nome, String CPF, LocalDate dataDeNascimento, String endereco){
         this.nome = nome;
         this.CPF = CPF;
         this.dataDeNascimento = dataDeNascimento;
@@ -26,11 +24,11 @@ public class Cliente {
         return CPF;
     }
 
-    public Date getDataDeNascimento() {
+    public LocalDate getDataDeNascimento() {
         return dataDeNascimento;
     }
 
-    public void setDataDeNascimento(Date dataDeNascimento) {
+    public void setDataDeNascimento(LocalDate dataDeNascimento) {
         this.dataDeNascimento = dataDeNascimento;
     }
 
@@ -41,8 +39,4 @@ public class Cliente {
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
-
-    public Conta getContas() {
-        return contas;
-    }
-    }
+}
