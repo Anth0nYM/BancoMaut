@@ -3,13 +3,12 @@ public class Cliente {
     private String nome;
     private String CPF;
     private LocalDate dataDeNascimento;
-    private String endereco;
-
-    public Cliente(String nome, String CPF, LocalDate dataDeNascimento, String endereco){
+    private Endereco endereco;
+    public Cliente(String nome, String CPF, LocalDate dataDeNascimento, Endereco endereco){
         this.nome = nome;
         this.CPF = CPF;
         this.dataDeNascimento = dataDeNascimento;
-        this.endereco = endereco; 
+        this.endereco = endereco;
         }
 
     public String getNome() {
@@ -32,11 +31,14 @@ public class Cliente {
         this.dataDeNascimento = dataDeNascimento;
     }
 
-    public String getEndereco() {
+
+    public Endereco getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(String endereco) {
+
+    public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
+    
 }
