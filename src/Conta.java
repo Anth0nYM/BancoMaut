@@ -48,5 +48,8 @@ public int getNumero() {
 public Cliente getCliente() {
     return cliente;
 }
+public double getSaldo() {
+    return saldo;
+}
 }
 
